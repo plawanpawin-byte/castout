@@ -222,6 +222,8 @@ ipcMain.handle('cap:choose', (_e, sid, sys) => { chosenSource = String(sid || ''
 
 
 app.whenReady().then(() => {
+  // Hard network kill-switch: this app never talks to the internet.
+  session.defaultSession.webRequest.onBeforeRequest({ urls: ['http://*/*', 'https://*/*', 'ws://*/*', 'wss://*/*', 'ftp://*/*'] }, (_d, cb) => cb({ cancel: true }));
   const okPerm = (perm, url) => (perm === 'media' || perm === 'display-capture') && String(url || '').startsWith('file://');
   session.defaultSession.setPermissionRequestHandler((_wc, perm, cb, details) => cb(okPerm(perm, details && details.requestingUrl)));
   session.defaultSession.setPermissionCheckHandler((_wc, perm, origin) => okPerm(perm, origin || 'file://'));
