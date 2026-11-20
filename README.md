@@ -1,6 +1,6 @@
 <p align="center"><img src="screenshots/banner.png" alt="Castout" width="100%"></p>
 
-<p align="center"><b>Record your screen</b><br>Version 1.0.1 for Windows · Free · Offline · No account</p>
+<p align="center"><b>Record your screen</b><br>Version 1.0.2 for Windows · Free · Offline · No account</p>
 
 <p align="center"><a href="https://github.com/plawanpawin-byte/castout/releases/latest"><b>Download Castout</b></a> · <a href="https://github.com/plawanpawin-byte/Lookout">All Lookout apps</a></p>
 
@@ -11,6 +11,12 @@ Castout records your screen or a single window, with computer sound and an optio
 **Made for:** Tutorials, bug reports, demos, game clips and meetings you need to keep.
 
 ![Castout](screenshots/01-choose-what-to-record.png)
+
+**On this page:** [Screenshots](#see-it-in-action) · [Interface](#the-interface) · [Features](#everything-it-can-do) · [How to use it](#how-to-use-it) · [Shortcuts](#keyboard-shortcuts) · [Formats](#files-and-formats) · [Privacy](#private-by-design) · [Install](#install) · [Questions](#questions)
+
+## What is new in 1.0.2
+
+A refreshed interface: every toolbar button now has a clear line icon, the app's mark sits at the top left, controls share one height and spacing, panels line up in tidy grids, and the toolbar keeps every button reachable on smaller windows by switching less important buttons to icons.
 
 ## See it in action
 
@@ -49,6 +55,12 @@ The file is written only where you choose.
 ![Output](screenshots/06-saved-mp4-frame.png)
 
 A frame from the saved MP4.
+
+## The interface
+
+- **Top bar:** refresh the list of screens and windows, and start recording.
+- **Centre:** large previews of each screen and window; click one to choose it.
+- **Right panel:** sound, picture and countdown options. After recording, the centre shows the take with a format picker and a Save button.
 
 ## Everything it can do
 
@@ -120,5 +132,15 @@ Capturing the screen needs your permission; Castout only captures what you pick.
 ## About Lookout
 
 Castout belongs to the **[Lookout](https://github.com/plawanpawin-byte/Lookout)** family: ten small, private Windows apps for documents and media, all with the same calm grey look and the same promise that your files stay yours. Install and update them together with the [Lookout launcher](https://github.com/plawanpawin-byte/lookout-launcher).
+
+- **[Pageout](https://github.com/plawanpawin-byte/pageout)**: read, annotate and sign pdfs
+- **[Chartout](https://github.com/plawanpawin-byte/chartout)**: flowcharts and diagrams
+- **[Branchout](https://github.com/plawanpawin-byte/branchout)**: mind maps and outlines
+- **[Planout](https://github.com/plawanpawin-byte/planout)**: plans and gantt timelines
+- **[Frameout](https://github.com/plawanpawin-byte/frameout)**: screen design and prototypes
+- **[Cutout](https://github.com/plawanpawin-byte/cutout)**: video editing on a timeline
+- **[Shiftout](https://github.com/plawanpawin-byte/shiftout)**: convert and compress media
+- **[Mendout](https://github.com/plawanpawin-byte/mendout)**: repair damaged media
+- **[Tuneout](https://github.com/plawanpawin-byte/tuneout)**: record and edit audio
 
 Released under the MIT License.
