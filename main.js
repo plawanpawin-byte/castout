@@ -29,7 +29,7 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true, sandbox: true, nodeIntegration: false,
-      webSecurity: true, allowRunningInsecureContent: false, spellcheck: false,
+      webSecurity: true, allowRunningInsecureContent: false, spellcheck: false, backgroundThrottling: false,
     },
   });
   Menu.setApplicationMenu(null);
