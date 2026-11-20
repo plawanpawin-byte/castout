@@ -80,11 +80,13 @@ function pickMime() {
 }
 async function start() {
   if (!chosen) { toast('Choose a screen or window first'); return; }
+  const grabbed = [];
   try {
     await window.host.captureChoose(chosen, opts.sys);
     const disp = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: opts.fps, cursor: opts.cursor ? 'always' : 'never' }, audio: opts.sys });
+    grabbed.push(disp);
     let mic = null;
-    if (opts.mic) { try { mic = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }); } catch (_) { toast('Microphone not available, recording without it'); } }
+    if (opts.mic) { try { mic = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }); grabbed.push(mic); } catch (_) { toast('Microphone not available, recording without it'); } }
     // mix audio tracks into one
     const tracks = [...disp.getVideoTracks()];
     let ctx = null;
@@ -95,7 +97,7 @@ async function start() {
       tracks.push(...dest.stream.getAudioTracks());
     }
     let comp = null, camStream = null;
-    if (opts.cam) { try { camStream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } }); } catch (_) { toast('Webcam not available, recording without it'); } }
+    if (opts.cam) { try { camStream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } }); grabbed.push(camStream); } catch (_) { toast('Webcam not available, recording without it'); } }
     if (camStream || opts.draw) { comp = makeComposite(disp, camStream); tracks[0] = comp.canvas.captureStream(opts.fps).getVideoTracks()[0]; }
     const stream = new MediaStream(tracks);
     if (opts.countdown) await countdown(opts.countdown);
@@ -110,6 +112,7 @@ async function start() {
     mr.start(1000);
     render();
   } catch (e) {
+    for (const s of grabbed) for (const t of s.getTracks()) t.stop();
     const m = e && e.name === 'NotAllowedError' ? 'Capture was not allowed' : (e && e.message) || String(e);
     toast('Could not start: ' + m);
   }
