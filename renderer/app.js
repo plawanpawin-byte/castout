@@ -78,9 +78,12 @@ function pickMime() {
   for (const m of ['video/webm;codecs=vp9,opus', 'video/webm;codecs=vp8,opus', 'video/webm']) if (MediaRecorder.isTypeSupported(m)) return m;
   return '';
 }
+let starting = false;
 async function start() {
+  if (starting || rec) return;
   if (!chosen) { toast('Choose a screen or window first'); return; }
-  const grabbed = [];
+  starting = true;
+  const grabbed = []; let ctx = null, comp = null;
   try {
     await window.host.captureChoose(chosen, opts.sys);
     const disp = await navigator.mediaDevices.getDisplayMedia({ video: { frameRate: opts.fps, cursor: opts.cursor ? 'always' : 'never' }, audio: opts.sys });
@@ -89,14 +92,13 @@ async function start() {
     if (opts.mic) { try { mic = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }); grabbed.push(mic); } catch (_) { toast('Microphone not available, recording without it'); } }
     // mix audio tracks into one
     const tracks = [...disp.getVideoTracks()];
-    let ctx = null;
     const aSrc = [disp, mic].filter((s) => s && s.getAudioTracks().length);
     if (aSrc.length) {
       ctx = new AudioContext(); const dest = ctx.createMediaStreamDestination();
       for (const s of aSrc) ctx.createMediaStreamSource(new MediaStream(s.getAudioTracks())).connect(dest);
       tracks.push(...dest.stream.getAudioTracks());
     }
-    let comp = null, camStream = null;
+    let camStream = null;
     if (opts.cam) { try { camStream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 } }); grabbed.push(camStream); } catch (_) { toast('Webcam not available, recording without it'); } }
     if (camStream || opts.draw) { comp = makeComposite(disp, camStream); tracks[0] = comp.canvas.captureStream(opts.fps).getVideoTracks()[0]; }
     const stream = new MediaStream(tracks);
@@ -113,9 +115,10 @@ async function start() {
     render();
   } catch (e) {
     for (const s of grabbed) for (const t of s.getTracks()) t.stop();
+    if (comp) comp.dispose(); if (ctx) ctx.close().catch(() => {});
     const m = e && e.name === 'NotAllowedError' ? 'Capture was not allowed' : (e && e.message) || String(e);
     toast('Could not start: ' + m);
-  }
+  } finally { starting = false; }
 }
 // Composite: screen + optional webcam bubble + pen strokes, drawn onto one canvas that is recorded.
 function makeComposite(disp, cam) {
@@ -247,7 +250,7 @@ async function save(kind) {
       const t = await window.host.tempFile(buf, 'webm');
       const cut = trimmed ? ['-ss', tr[0].toFixed(2), '-t', (tr[1] - tr[0]).toFixed(2)] : [];
       const enc = kind === 'webm' ? ['-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', '30', '-deadline', 'realtime', '-cpu-used', '8', '-c:a', 'libopus'] : ARGS[kind];
-      const dur = trimmed ? tr[1] - tr[0] : take.duration;
+      const dur = Math.min(trimmed ? tr[1] - tr[0] : take.duration, kind === 'gif' ? 30 : Infinity);
       try { await window.host.run({ args: ['-i', '{in0}', ...enc, ...(kind === 'gif' && trimmed ? ['-ss', tr[0].toFixed(2), '-t', Math.min(30, tr[1] - tr[0]).toFixed(2)] : cut), '{out}'], inputs: [t.id], out: dest.id, duration: dur }); } finally { window.host.removeFile(t.id); }
     }
     toast('Saved ' + dest.name);
