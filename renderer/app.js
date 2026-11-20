@@ -68,7 +68,7 @@ function renderSetup() {
     h('label', { class: 'field' }, 'Size', sel('camSize', [[16, 'Small'], [22, 'Medium'], [30, 'Large']], true)),
     h('h3', { text: 'Drawing' }), chk('draw', 'Draw on the recording'),
     h('h3', { text: 'Start' }), h('label', { class: 'field' }, 'Countdown', sel('countdown', [[0, 'None'], [3, '3 seconds'], [5, '5 seconds'], [10, '10 seconds']], true)),
-    h('div', { class: 'muted', style: 'font-size:12px;margin-top:12px;line-height:1.6', text: 'Ctrl+Shift+R stops the recording when this window is in front.' }));
+    h('div', { class: 'muted', style: 'font-size:12px;margin-top:12px;line-height:1.6', text: 'Ctrl+Shift+P pauses or resumes and Ctrl+Shift+R stops, when this window is in front.' }));
   main.append(left, side);
   setStatus(chosen ? 'Ready' : 'No source selected', h('span', { class: 'grow' }), 'Recordings are saved only where you choose');
 }
@@ -254,6 +254,11 @@ async function save(kind) {
   } catch (e) { toast('Save failed: ' + String(e.message || e).split('\n').pop().slice(0, 90)); }
 }
 
-document.addEventListener('keydown', (e) => { if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'r' && rec) { e.preventDefault(); stopRec(); } });
+document.addEventListener('keydown', (e) => {
+  if (!rec || !e.ctrlKey || !e.shiftKey) return;
+  const k = e.key.toLowerCase();
+  if (k === 'r') { e.preventDefault(); stopRec(); }
+  else if (k === 'p') { e.preventDefault(); togglePause(); }
+});
 window.addEventListener('beforeunload', (e) => { if (rec || take) { e.preventDefault(); e.returnValue = ''; } });
 loadSources();
