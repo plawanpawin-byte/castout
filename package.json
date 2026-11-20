@@ -1,7 +1,7 @@
 {
   "name": "castout",
   "productName": "Castout",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Record your screen and microphone, then trim and save the clip.",
   "main": "main.js",
   "author": "Lookout",
