@@ -1,8 +1,10 @@
-<p align="center"><img src="screenshots/banner.png" alt="Castout" width="100%"></p>
+<p align="center"><img src="screenshots/logo.png" alt="Castout" width="128"></p>
 
-<p align="center"><b>Record your screen</b><br>Version 1.0.3 for Windows · Free · Offline · No account</p>
+<h1 align="center">Castout</h1>
 
-<p align="center"><a href="https://github.com/plawanpawin-byte/castout/releases/latest"><b>Download Castout</b></a> · <a href="https://github.com/plawanpawin-byte/Lookout">All Lookout apps</a></p>
+<p align="center"><b>Record your screen</b><br>Version 1.0.14 for Windows · Free · Offline · No account</p>
+
+<p align="center"><a href="https://github.com/plawanpawin-byte/castout/releases/latest"><b>Download Castout</b></a> · <a href="https://github.com/plawanpawin-byte/lookout-launcher">Lookout launcher</a> · <a href="https://github.com/plawanpawin-byte/Lookout">All Lookout apps</a></p>
 
 ---
 
@@ -12,11 +14,51 @@ Castout records your screen or a single window, with computer sound and an optio
 
 ![Castout](screenshots/01-choose-what-to-record.png)
 
-**On this page:** [Screenshots](#see-it-in-action) · [Interface](#the-interface) · [Features](#everything-it-can-do) · [How to use it](#how-to-use-it) · [Shortcuts](#keyboard-shortcuts) · [Formats](#files-and-formats) · [Privacy](#private-by-design) · [Install](#install) · [Questions](#questions)
+**On this page:** [In plain words](#in-plain-words) · [Who it is for](#who-it-is-for) · [Try it in 3 steps](#try-it-in-3-steps) · [Screenshots](#see-it-in-action) · [Features](#everything-it-can-do) · [How to use it](#how-to-use-it) · [Privacy](#private-by-design) · [Install](#install) · [Questions](#questions)
 
-## What is new in 1.0.3
+## In plain words
 
-A refreshed interface: every toolbar button now has a clear line icon, the app's mark sits at the top left, controls share one height and spacing, panels line up in tidy grids, and the toolbar keeps every button reachable on smaller windows by switching less important buttons to icons.
+Castout **records what is on your screen** as a video. Use it for a tutorial ("here is how to do this"), to show a bug to a colleague, to save a video call you are allowed to record, or to capture a game moment. You choose the whole screen or one window, decide whether to record computer sound and your **microphone**, and press start. A short countdown gives you time to get ready.
+
+When you stop, you see the clip, can play it, and save it as **MP4, WebM, GIF or MP3** (audio only).
+
+**Not for:** Castout records and saves. To edit the recording, open it in Cutout.
+
+## Who it is for
+
+- **Teachers and trainers** creating how-to videos.
+- **Support teams** showing a problem to a developer.
+- **Gamers and creators** capturing clips.
+
+## Try it in 3 steps
+
+1. Click the screen or window you want to record.
+2. Turn the microphone on or off in the options, then click **Start recording**.
+3. Click **Stop and review**, watch the clip, then **Save** it as MP4.
+
+## What is new in 1.0.14
+
+A new look inspired by Google's own tools (AI Studio, Colab, Gemini): a calm dark charcoal theme, rounded pill buttons, a soft blue accent and roomier spacing. The app icon is now a colour logo so you can find Castout at a glance in the Start menu and in the Lookout launcher. All screenshots below were taken again with the new look.
+
+## In plain words
+
+Castout **records what is on your screen** as a video. Use it for a tutorial ("here is how to do this"), to show a bug to a colleague, to save a video call you are allowed to record, or to capture a game moment. You choose the whole screen or one window, decide whether to record computer sound and your **microphone**, and press start. A short countdown gives you time to get ready.
+
+When you stop, you see the clip, can play it, and save it as **MP4, WebM, GIF or MP3** (audio only).
+
+**Not for:** Castout records and saves. To edit the recording, open it in Cutout.
+
+## Who it is for
+
+- **Teachers and trainers** creating how-to videos.
+- **Support teams** showing a problem to a developer.
+- **Gamers and creators** capturing clips.
+
+## Try it in 3 steps
+
+1. Click the screen or window you want to record.
+2. Turn the microphone on or off in the options, then click **Start recording**.
+3. Click **Stop and review**, watch the clip, then **Save** it as MP4.
 
 ## See it in action
 
@@ -111,7 +153,7 @@ Saves WebM, MP4, GIF and MP3.
 
 ## Install
 
-1. Open the [latest release](https://github.com/plawanpawin-byte/castout/releases/latest) and download the file named **Castout-Setup-** followed by the version number and **.exe**. You can also install it from the [Lookout launcher](https://github.com/${OWNER}/lookout-launcher), which keeps it up to date.
+1. Open the [latest release](https://github.com/plawanpawin-byte/castout/releases/latest) and download the file named **Castout-Setup-** followed by the version number and **.exe**. You can also install it from the [Lookout launcher](https://github.com/plawanpawin-byte/lookout-launcher), which keeps it up to date.
 2. Run the installer. It installs just for you, so it does not ask for administrator rights.
 3. Windows may show a blue **Windows protected your PC** screen because these installers are not signed with a paid certificate. Click **More info**, then **Run anyway**.
 4. Open Castout from the Start menu.
@@ -129,18 +171,40 @@ No. Castout does not use the network.
 **Windows asks about screen capture. Why?**  
 Capturing the screen needs your permission; Castout only captures what you pick.
 
+**Does it record sound?**  
+Yes: computer sound, your microphone, or both, as you choose.
+
+**Why is my GIF big?**  
+GIFs are large by nature. Keep clips short, or save as MP4.
+
+**Can I record a single window?**  
+Yes. Click the window instead of the whole screen.
+
+**Does it record sound?**  
+Yes: computer sound, your microphone, or both, as you choose.
+
+**Why is my GIF big?**  
+GIFs are large by nature. Keep clips short, or save as MP4.
+
+**Can I record a single window?**  
+Yes. Click the window instead of the whole screen.
+
 ## About Lookout
 
-Castout belongs to the **[Lookout](https://github.com/plawanpawin-byte/Lookout)** family: ten small, private Windows apps for documents and media, all with the same calm grey look and the same promise that your files stay yours. Install and update them together with the [Lookout launcher](https://github.com/plawanpawin-byte/lookout-launcher).
+Castout is part of **[Lookout](https://github.com/plawanpawin-byte/Lookout)**: ten small, private Windows apps for documents and media that share one look and one promise, that your files stay on your computer. Install and update them together with the [Lookout launcher](https://github.com/plawanpawin-byte/lookout-launcher).
 
-- **[Pageout](https://github.com/plawanpawin-byte/pageout)**: read, annotate and sign pdfs
-- **[Chartout](https://github.com/plawanpawin-byte/chartout)**: flowcharts and diagrams
-- **[Branchout](https://github.com/plawanpawin-byte/branchout)**: mind maps and outlines
-- **[Planout](https://github.com/plawanpawin-byte/planout)**: plans and gantt timelines
-- **[Frameout](https://github.com/plawanpawin-byte/frameout)**: screen design and prototypes
-- **[Cutout](https://github.com/plawanpawin-byte/cutout)**: video editing on a timeline
-- **[Shiftout](https://github.com/plawanpawin-byte/shiftout)**: convert and compress media
-- **[Mendout](https://github.com/plawanpawin-byte/mendout)**: repair damaged media
-- **[Tuneout](https://github.com/plawanpawin-byte/tuneout)**: record and edit audio
+| | App | What it is for | Code |
+| --- | --- | --- | --- |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/lookout-launcher/main/build/icon.png" width="32" alt="Lookout"> | **Lookout** | Install, open and update all the apps below | [GitHub](https://github.com/plawanpawin-byte/lookout-launcher) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/pageout/main/build/icon.png" width="32" alt="Pageout"> | **Pageout** | Read, annotate and sign PDFs | [GitHub](https://github.com/plawanpawin-byte/pageout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/chartout/main/build/icon.png" width="32" alt="Chartout"> | **Chartout** | Flowcharts, org charts and diagrams | [GitHub](https://github.com/plawanpawin-byte/chartout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/branchout/main/build/icon.png" width="32" alt="Branchout"> | **Branchout** | Mind maps and outlines | [GitHub](https://github.com/plawanpawin-byte/branchout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/planout/main/build/icon.png" width="32" alt="Planout"> | **Planout** | Project plans and Gantt timelines | [GitHub](https://github.com/plawanpawin-byte/planout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/frameout/main/build/icon.png" width="32" alt="Frameout"> | **Frameout** | App and web screen design with click-through prototypes | [GitHub](https://github.com/plawanpawin-byte/frameout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/cutout/main/build/icon.png" width="32" alt="Cutout"> | **Cutout** | Video editing on a timeline | [GitHub](https://github.com/plawanpawin-byte/cutout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/shiftout/main/build/icon.png" width="32" alt="Shiftout"> | **Shiftout** | Convert and compress video and audio, make GIFs | [GitHub](https://github.com/plawanpawin-byte/shiftout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/castout/main/build/icon.png" width="32" alt="Castout"> | **Castout** | Record your screen | [GitHub](https://github.com/plawanpawin-byte/castout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/mendout/main/build/icon.png" width="32" alt="Mendout"> | **Mendout** | Check and repair damaged video, audio, pictures and PDFs | [GitHub](https://github.com/plawanpawin-byte/mendout) |
+| <img src="https://raw.githubusercontent.com/plawanpawin-byte/tuneout/main/build/icon.png" width="32" alt="Tuneout"> | **Tuneout** | Record and edit audio | [GitHub](https://github.com/plawanpawin-byte/tuneout) |
 
 Released under the MIT License.
